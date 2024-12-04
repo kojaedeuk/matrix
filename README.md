@@ -15,31 +15,31 @@
 전통적 NLP에서는 텍스트 데이터를 정량적으로 표현하기 위해 아래와 같은 방법을 사용한다.
 
 1. **Bag-of-Words (BoW):**
-   텍스트를 단어의 빈도수로 나타내며, 이를 \( D \times V \) 크기의 행렬 \( M \)로 표현할 수 있다. 여기서 \( D \)는 문서 수, \( V \)는 어휘 크기이다.  
-   \[
-   M_{ij} = \text{문서 } i \text{에서 단어 } j \text{의 출현 빈도}
-   \]
+   텍스트를 단어의 빈도수로 나타내며, 이를 ( D times V ) 크기의 행렬 ( M )로 표현할 수 있다. 여기서 ( D )는 문서 수, ( V )는 어휘 크기이다.  
+   [
+   M_{ij} = text{문서 } i text{에서 단어 } j text{의 출현 빈도}
+   ]
 
 2. **TF-IDF (Term Frequency-Inverse Document Frequency):**
    단어의 중요도를 반영하기 위해 BoW 행렬을 TF-IDF로 변환한다.
-   \[
-   \text{TF-IDF}_{ij} = \text{TF}_{ij} \times \log\left(\frac{N}{1 + \text{DF}_j}\right)
-   \]
-   여기서 \( N \)은 문서의 총 개수, \( \text{DF}_j \)는 단어 \( j \)가 나타난 문서의 개수이다.
+   [
+   text{TF-IDF}_{ij} = text{TF}_{ij} times log\left(frac{N}{1 + text{DF}_j}right)
+   ]
+   여기서 ( N )은 문서의 총 개수, ( text{DF}_j )는 단어 ( j )가 나타난 문서의 개수이다.
 
 ##### **2.2 코사인 유사도**
-문서 간의 유사도를 측정하기 위해 주로 코사인 유사도를 사용하며, 이는 두 벡터 \( \mathbf{u}, \mathbf{v} \) 간의 각도로 정의된다.
-\[
-\text{Cosine Similarity} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}
-\]
+문서 간의 유사도를 측정하기 위해 주로 코사인 유사도를 사용하며, 이는 두 벡터 ( mathbf{u}, mathbf{v} ) 간의 각도로 정의된다.
+[
+text{Cosine Similarity} = frac{mathbf{u} cdot mathbf{v}}{|mathbf{u}| |mathbf{v}|}
+]
 
 ##### **2.3 행렬 분해**
 행렬 분해는 차원 축소 및 주요 특징 추출에 사용된다.
 - **Singular Value Decomposition (SVD):** BoW 또는 TF-IDF 행렬을 저차원 공간으로 투영하여 정보의 중복을 줄인다.  
-   \[
-   M = U \Sigma V^T
-   \]
-   여기서 \( U \)와 \( V \)는 직교 행렬, \( \Sigma \)는 대각 행렬이다.
+   [
+   M = U Sigma V^T
+   ]
+   여기서 ( U )와 ( V )는 직교 행렬, ( Sigma )는 대각 행렬이다.
 
 - **Latent Semantic Analysis (LSA):** SVD를 사용하여 단어와 문서 간의 숨겨진 의미 관계를 발견한다.
 
